@@ -15,7 +15,7 @@ pipeline{
         stage('Build Docker Image') {
             steps {
                 script {
-                  sh 'docker build -t ankush8421/my-app-2.0 .'
+                  sh 'docker build -t ankush8421/my-app-1.0 .'
                 }
             }
         }
@@ -25,7 +25,7 @@ pipeline{
                  withCredentials([string(credentialsId: 'Dockerhubpwd', variable: 'Password')]) {
                     sh 'docker login -u ankush8421 -p ${Password}'
                  }  
-                 sh 'docker push ankush8421/my-app-2.0'
+                 sh 'docker push ankush8421/my-app-1.0'
                 }
             }
         }
