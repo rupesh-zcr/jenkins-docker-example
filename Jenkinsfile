@@ -6,7 +6,7 @@ pipeline{
     stages {
         stage('Build Maven') {
             steps{
-                checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'Dockerhubpwd', url: 'https://github.com/rupesh-zcr/jenkins-docker-example']]])
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'githubpwd', url: 'https://github.com/rupesh-zcr/jenkins-docker-example']]])
 
                 sh "mvn -Dmaven.test.failure.ignore=true clean package"
                 
