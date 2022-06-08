@@ -1,8 +1,6 @@
 pipeline{
     agent any
-    environment {
-        JAVA_HOME=/opt/amazon-corretto-11.0.4.11.1-linux-x64/bin/java/bin/java
-    }
+  
     tools {
         maven 'MAVEN'
     }
