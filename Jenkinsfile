@@ -1,15 +1,10 @@
 pipeline{
     agent any
-  
-    tools {
-        maven 'MAVEN'
     }
     stages {
         stage('Build Maven') {
             steps{
                 checkout([$class: 'GitSCM', branches: [[name: '*/main']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'githubpwd', url: 'https://github.com/rupesh-zcr/jenkins-docker-example']]])
-
-                sh "mvn -Dmaven.test.failure.ignore=true clean package"
                 
             }
         }
