@@ -1,4 +1,2 @@
-FROM openjdk:8-jdk-alpine
-COPY target/*.jar /
+FROM nginx
 EXPOSE 8080
-ENTRYPOINT ["java","-jar","/my-app-1.0-SNAPSHOT.jar"]
